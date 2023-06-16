@@ -1,12 +1,12 @@
 package models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class WeatherPrediction {
     private UUID id;
-    private Date created;
-    private Date updated;
+    private LocalDateTime created;
+    private LocalDateTime updated;
     private float longitude;
     private float latitude;
     private int predictionDatum; //20230616
@@ -17,7 +17,7 @@ public class WeatherPrediction {
 
     public WeatherPrediction(UUID id) {
         this.id = id;
-        this.created = new Date();
+        this.created = LocalDateTime.now();
     }
 
     public WeatherPrediction() {
@@ -32,11 +32,11 @@ public class WeatherPrediction {
         this.id = id;
     }
 
-    public Date getCreated() {
+    public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(LocalDateTime created) {
         this.created = created;
     }
 
@@ -100,11 +100,11 @@ public class WeatherPrediction {
         return weatherPrediction.predictionHour;
     }
 
-    public Date getUpdated() {
+    public LocalDateTime getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Date updated) {
+    public void setUpdated(LocalDateTime updated) {
         this.updated = updated;
     }
 }

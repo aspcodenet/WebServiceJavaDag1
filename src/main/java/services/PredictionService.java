@@ -2,8 +2,8 @@ package services;
 
 import models.WeatherPrediction;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class PredictionService {
@@ -27,13 +27,13 @@ public class PredictionService {
         if(allPredictions.stream().anyMatch(prediction -> prediction.getPredictionDatum() == newPrediction.getPredictionDatum() && prediction.getPredictionHour() == newPrediction.getPredictionHour() && prediction.getApiProvider() == newPrediction.getApiProvider())){
             return false;
         }
-        newPrediction.setCreated(new Date());
-        newPrediction.setUpdated(new Date());
+        newPrediction.setCreated(LocalDateTime.now());
+        newPrediction.setUpdated(LocalDateTime.now());
         allPredictions.add(newPrediction);
         return true;
     }
 
     public void update(WeatherPrediction t) {
-        t.setUpdated(new Date());
+        t.setUpdated(LocalDateTime.now());
     }
 }
