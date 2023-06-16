@@ -20,4 +20,103 @@
   "predictionTemperature" : 21,
   "rainOrSnow" : false,
   "apiProvider" : "Smhi"
+}, {
+  "id" : "1354fdd3-7ffe-4c39-b9fd-ab47c6e4fb1d",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 367678200 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 367678200 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 15,
+  "predictionTemperature" : 26,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "1779fa3d-7a3d-4ebe-8d7d-037ddb5902ef",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 382713500 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 382713500 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 16,
+  "predictionTemperature" : 25,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "fac20ff1-9d02-4996-a00b-22dc163d7f17",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 384679200 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 384679200 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 17,
+  "predictionTemperature" : 25,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "3414aee8-1b89-45aa-9f00-b28c04dd1bbe",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 386679000 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 386679000 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 18,
+  "predictionTemperature" : 24,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "9a78e2dc-e254-44ec-9aea-64246c2bf1b9",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 390684900 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 390684900 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 19,
+  "predictionTemperature" : 24,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "0da0f6ce-a0a3-4cd4-9adb-f645b81a015c",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 392683600 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 392683600 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 20,
+  "predictionTemperature" : 23,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "fe2dc0fe-d90e-428f-b14c-875b13734398",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 394683500 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 394683500 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 21,
+  "predictionTemperature" : 22,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "7d8881d0-6604-4adb-807e-76f9fa911d8f",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 396684600 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 396684600 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 22,
+  "predictionTemperature" : 20,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
+}, {
+  "id" : "52e8fe0c-01e7-437a-8e4b-56e0ac0a729f",
+  "created" : [ 2023, 6, 16, 14, 25, 4, 398683700 ],
+  "updated" : [ 2023, 6, 16, 14, 25, 4, 398683700 ],
+  "longitude" : 18.021515,
+  "latitude" : 59.309967,
+  "predictionDatum" : 20230616,
+  "predictionHour" : 23,
+  "predictionTemperature" : 19,
+  "rainOrSnow" : false,
+  "apiProvider" : "Smhi"
 } ]

@@ -1,10 +1,11 @@
 package se.systementor.webservicejavadag1;
 
-import models.ApiProvider;
-import models.WeatherPrediction;
+import se.systementor.webservicejavadag1.models.ApiProvider;
+import se.systementor.webservicejavadag1.models.WeatherPrediction;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import services.PredictionService;
+import se.systementor.webservicejavadag1.services.PredictionService;
+import se.systementor.webservicejavadag1.services.Smhi.SmhiProvider;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,6 +16,9 @@ import java.util.UUID;
 public class CrudConsoleApplication implements CommandLineRunner {
 
     private final PredictionService predictionService = new PredictionService();
+    private final SmhiProvider smhiProvider = new SmhiProvider();
+    private static final float longitude = 18.02151508449004F;
+    private static final float latitude = 59.30996552541549F;
 
     @Override
     public void run(String... args) throws Exception {
@@ -26,10 +30,18 @@ public class CrudConsoleApplication implements CommandLineRunner {
             int sel = Integer.parseInt(scan.nextLine()) ;
             if(sel == 1) listPredictions(scan);
             else if(sel == 2) createNewPrediction(scan);
-            else if(sel == 3) {
-                updatePrediction(scan);
-            } else if(sel == 9) break;
+            else if(sel == 3) updatePrediction(scan);
+            else if(sel == 4) fetchFromSmhi();
+            else if(sel == 9) break;
         }
+    }
+
+    private void fetchFromSmhi() {
+        System.out.println("*** Fetching from SMHI ***");
+        for(WeatherPrediction weatherPrediction : smhiProvider.getPredictionsForRestOfDay(longitude,latitude)){
+            predictionService.createNew(weatherPrediction);
+        }
+        System.out.println("*** Done ***");
     }
 
     private void updatePrediction(Scanner scan) {
@@ -110,6 +122,7 @@ public class CrudConsoleApplication implements CommandLineRunner {
         System.out.println("1. See registrations");
         System.out.println("2. Create registration");
         System.out.println("3. Update registration");
+        System.out.println("4. Fetch from now from SMHI");
         System.out.println("9. Exit");
     }
 }

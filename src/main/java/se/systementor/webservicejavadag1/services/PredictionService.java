@@ -1,9 +1,9 @@
-package services;
+package se.systementor.webservicejavadag1.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import models.WeatherPrediction;
+import se.systementor.webservicejavadag1.models.WeatherPrediction;
 
 import java.io.IOException;
 import java.io.StringWriter;

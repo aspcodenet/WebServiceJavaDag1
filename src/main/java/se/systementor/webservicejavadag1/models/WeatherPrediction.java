@@ -1,4 +1,4 @@
-package models;
+package se.systementor.webservicejavadag1.models;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
