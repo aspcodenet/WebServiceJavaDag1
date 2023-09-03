@@ -1,5 +1,6 @@
 package se.systementor.webservicejavadag1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import se.systementor.webservicejavadag1.models.ApiProvider;
 import se.systementor.webservicejavadag1.models.WeatherPrediction;
 import org.springframework.boot.CommandLineRunner;
@@ -15,7 +16,8 @@ import java.util.UUID;
 @SpringBootApplication
 public class CrudConsoleApplication implements CommandLineRunner {
 
-    private final PredictionService predictionService = new PredictionService();
+    @Autowired
+    private PredictionService predictionService;
     private final SmhiProvider smhiProvider = new SmhiProvider();
     private static final float longitude = 18.02151508449004F;
     private static final float latitude = 59.30996552541549F;
