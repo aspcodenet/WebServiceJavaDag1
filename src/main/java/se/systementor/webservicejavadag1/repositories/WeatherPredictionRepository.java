@@ -12,6 +12,8 @@ public interface WeatherPredictionRepository extends CrudRepository<WeatherPredi
     @Override
     Optional<WeatherPrediction> findById(UUID id);
 
+    List<WeatherPrediction> findAllByPredictionDatum(int predictionDatum);
+
     @Override
     List<WeatherPrediction> findAll();
 

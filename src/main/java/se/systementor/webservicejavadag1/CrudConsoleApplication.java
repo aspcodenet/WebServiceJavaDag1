@@ -2,6 +2,7 @@ package se.systementor.webservicejavadag1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import se.systementor.webservicejavadag1.models.ApiProvider;
+import se.systementor.webservicejavadag1.models.AverageDTO;
 import se.systementor.webservicejavadag1.models.WeatherPrediction;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +10,11 @@ import se.systementor.webservicejavadag1.services.PredictionService;
 import se.systementor.webservicejavadag1.services.Smhi.SmhiProvider;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 @SpringBootApplication
 public class CrudConsoleApplication implements CommandLineRunner {
@@ -25,6 +28,8 @@ public class CrudConsoleApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         var scan = new Scanner(System.in);
+        //createDataForToday();
+        //fetchFromSmhi();
 
         while(true){
             showHeaderMenu();
@@ -34,8 +39,33 @@ public class CrudConsoleApplication implements CommandLineRunner {
             else if(sel == 2) createNewPrediction(scan);
             else if(sel == 3) updatePrediction(scan);
             else if(sel == 4) fetchFromSmhi();
-            else if(sel == 9) break;
+            else if(sel == 5) calculateAverage();
+            //else if(sel == 6) calculateAverage();
         }
+    }
+    private static Random rand = new Random();
+    private void createDataForToday() {
+        for(int i = 0; i < 24;i++){
+            var dt = LocalDateTime.now().with(LocalTime.MIDNIGHT);
+            dt = dt.plusHours(i);
+            var forecast = new WeatherPrediction();
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+            String formatDateTime = dt.format(formatter);
+            int datum =Integer.parseInt(formatDateTime);
+
+
+            forecast.setPredictionDatum(datum);
+            forecast.setPredictionHour(dt.getHour());
+            forecast.setPredictionTemperature( rand.nextInt(50) -25 );
+            forecast.setApiProvider(ApiProvider.Smhi);
+            predictionService.createNew(forecast);
+        }
+    }
+
+    private void calculateAverage() {
+        var dag = LocalDate.now();
+        List<AverageDTO> dtos =  predictionService.calculateAverage(dag);
     }
 
     private void fetchFromSmhi() {
@@ -125,6 +155,7 @@ public class CrudConsoleApplication implements CommandLineRunner {
         System.out.println("2. Create registration");
         System.out.println("3. Update registration");
         System.out.println("4. Fetch from now from SMHI");
+        System.out.println("5. Calculate average");
         System.out.println("9. Exit");
     }
 }
